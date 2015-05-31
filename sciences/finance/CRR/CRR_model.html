@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CRR : le modèle</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+	
+<body>
+	
+	<div class="pusher">
+
+		<div class="main-container">
+	
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container">
+			
+				<h1>Le modèle de Cox-Ross-Rubinstein</h1>
+				
+				<p>Le grand moment que tout le monde attendait est maintenant venu : nous allons ici découvrir notre premier modèle
+				d'évaluation de la prime d'une option!</p>
+				
+				<p>Le modèle que nous allons étudier ici s'appelle le <strong>modèle de Cox-Ross-Rubinstein</strong>. Il a été développé en 1979
+				par ses auteurs : <strong>John Carrington Cox</strong>, <strong>Stephen Alan "Steve" Ross</strong> et <strong>Mark Edward Rubinstein</strong>.</p>
+				
+				<p>Comme pour tout modèle, que ce soit en physique, en biologie ou bien comme ici en finance, celui-ci repose sur 
+				des hypothèses. Ainsi, rappelons le tout de même : un modèle ne saurait décrire exactement la réalité et reste une
+				représentation plus ou moins réaliste de celle-ci. Il est donc primordiale de bien définir les hypothèses, qui peuvent
+				être plus ou moins forte, que l'on émet pour construire ce modèle et de les garder à l'esprit pour toujours savoir
+				sur quoi on travaille.</p>
+					
+				<p>Nous allons donc construire le <strong>modèle de Cox-Ross-Rubinstein</strong>, encore appelé 
+				<strong>modèle binomial</strong> sur les hypothèses suivantes :</p>
+					
+						<blockquote><strong>Modèle de Cox-Ross-Rubinstein</strong>
+						<p>
+						<ul>
+							<li>L'option est <strong>européenne</strong> : l'échéance est fixée</li>
+							<li>Le modèle est <strong>discret</strong> et <strong>binomiale</strong> : à chaque pas de temps, la valeur
+							de l'actif sous-jacent ne peut prendre que 2 valeurs qui sont (bas et haut sont constants dans le temps)
+							$$
+							\left\{
+								\begin{array}{r c l}
+								S_{t + 1, bas} &=& bas \times S_{t}\\
+								S_{t + 1, haut} &=& haut \times S_{t}\\
+								\end{array}
+							\right.
+							$$
+							</li>
+							<li>Le modèle respecte le <strong>principe de non-arbitrage</strong></li>
+						</ul>	
+						</p></blockquote>
+					
+				
+					
+				<p>Nous allons donc nous servir de ce modèle pour extraire une expression nous donnant la valeur de la prime de l'option.</p>
+				
+				<p>Dans un premier temps, nous exprimerons une première formule qui ne prendra en compte qu'une seule période. Celle-ci,
+				bien que peu réaliste, est tout à fait pertinente d'un point de vue pédagogique puisqu'elle permet de saisir toute l'essence
+				du modèle d'une manière simple.</p>
+				
+				<p>Ensuite, il suffira d'extrapoler cette formule au cas de périodes multiples pour obtenir la fameuse formule de <em>pricing</em>
+				d'options europénnes par le modèle de Cox-Ross-Rubinstein.</p>
+				
+				<a href="CRR_1p_formula.html">--> Formule à période unique</a>
+						
+			<div class="hidden-site" id="hidden-site"></div>
+					
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+	
+</body>
+
+</html>	

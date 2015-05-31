@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sport</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/grid.css">
+	<style>
+
+			.help-table {
+
+	    		border-collapse: collapse;
+
+				margin-left: auto; 
+				margin-right: auto;
+			}
+
+			.help-table tr:nth-child(odd){
+
+			 	background-color:#E9E9F1;
+			}
+
+			.help-table-head {
+
+				border: 4px solid black;
+
+				width: 1600px;
+				height: 2rem;
+
+				background-color: #292929;
+
+				color: #CCCCCC;
+				font-weight: bold;	
+				text-align: center;
+			}
+
+			.help-table-entry {
+
+				border: 2px solid black;
+
+				width: 800px;
+				height: 2rem;
+
+				font-weight: bold;
+				text-align: center;
+			}
+
+
+			.help-table-command {
+
+				border: 2px solid black;
+
+				width: 800px;
+				height: 2rem;
+
+				font-style: italic;
+				text-align: center;
+			}
+
+			.tags
+			{
+				font-size: 1.8rem;
+				font-style: italic;
+				font-weight: bold;
+			}
+
+			.tags a:link 
+			{ 
+				color: #000066; 
+				text-decoration: none;
+				margin-right: 10px;
+				line-height: 2.5rem;
+			}
+
+			.tags a:visited 
+			{ 
+				color: #000066; 
+				text-decoration: none; 
+			}
+
+			.tags a:hover 
+			{ 
+				color: #000066;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+		</style>
+</head>
+
+<body>
+
+	<div class="pusher">
+
+		<div class="main-container">
+			
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+			
+			<div class="container">
+
+				<h1>Tags</h1>
+
+				<p class="tags">
+				    <a href="#ssh">ssh</a>
+				    <a href="#tar">tar</a>
+				    <a href="#gzip">gzip</a>
+				    <a href="#alias">alias</a>
+				    <a href="#ln">ln</a>
+				    <a href="#ls">ls</a>
+				    <a href="#ldd">ldd</a>
+				    <a href="#head">head</a>
+				    <a href="#tail">tail</a>
+				    <a href="#date">date</a>
+				    <a href="#top">top</a>
+				    <a href="#free">free</a>
+				    <a href="#paste">paste</a>
+				    <a href="#sort">sort</a>
+				    <a href="#sed">sed</a>
+				    <a href="#grep">grep</a>
+				    <a href="#kill">kill</a>
+				    <a href="#dollar">$</a>
+				    <a href="#screenshot">screenshot</a>
+				    <a href="#git">git</a>
+				    <a href="#ncdump">ncdump</a>
+				    <a href="#awk">awk</a>
+				    <a href="#chmod">chmod</a>
+				    <a href="#chown">chown</a>
+				    <a href="#read">read</a>
+				    <a href="#sub">Sublime Text</a>
+				    <a href="#firefox">Firefox</a>
+				    <a href="#sass">sass</a>
+				</p>
+
+			  	<h1>Le memento du geek</h1>
+
+			  	<table class="help-table" id="ssh">
+			  		<tr>
+			  			<td class="help-table-head ">SSH : La connexion sécurisée</td>
+			  		</tr>
+			  	</table>
+			  	<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Connexion sécurisée avec une machine distante</td>
+					  <td class="help-table-command">ssh login@nom_de_domaine</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Connexion sécurisée avec une machine distante et affichage du bureau</td>
+					  <td class="help-table-command">ssh -X login@nom_de_domaine</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Exécution d'une commande à distance</td>
+					  <td class="help-table-command">ssh login@nom_de_domaine "commande"</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Exécution d'un script local sur une machine distante</td>
+					  <td class="help-table-command">ssh login@nom_de_domaine bash < script</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Générer une paire de clé publique/privée</td>
+					  <td class="help-table-command">ssh-keygen -t rsa</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Envoyer la clé publique sur l'hôte distant</td>
+					  <td class="help-table-command">ssh-copy-id -i id_rsa.pub login@nom_de_domaine</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="tar">
+			  		<tr>
+			  			<td class="help-table-head ">TAR : Création/Extraction d'une archive</td>
+			  		</tr>
+			  	</table>
+			  	<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Créer une archive à partir de fichiers (v :mode verbeux; f : pour spécifier les fichiers)</td>
+					  <td class="help-table-command">tar -cvf nom_archive.tar fichier1 fichier2 ... fichierN</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Créer une archive à partir d'un dossier</td>
+					  <td class="help-table-command">tar -cvf nom_archive.tar dossier/</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Créer une archive au format tar.gz à partir d'un dossier</td>
+					  <td class="help-table-command">tar -czvf nom_archive.tar.gz dossier/</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Créer une archive au format tar.bz2 à partir d'un dossier</td>
+					  <td class="help-table-command">tar -cjvf nom_archive.tar.bz2 dossier/</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Extraire une archive au format tar.gz</td>
+					  <td class="help-table-command">tar -xzvf nom_archive.tar.gz</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Extraire une archive au format tar.bz2</td>
+					  <td class="help-table-command">tar -xjvf nom_archive.tar.bz2</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Lister le contenu d'une archive</td>
+					  <td class="help-table-command">tar -tf nom_archive.tar</td>		
+					</tr>
+				</table>
+
+			  	<br><br>
+
+			  	<table class="help-table" id="gzip">
+			  		<tr>
+			  			<td class="help-table-head ">GZIP : Décompresser une archive</td>
+			  		</tr>
+			  	</table>
+			  	<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Décompresser un fichier <em>.gz</em></td>
+					  <td class="help-table-command">gzip -d fichier.gz</td>		
+					</tr>
+				</table>
+
+			  	<br><br>
+
+			  	<table class="help-table" id="alias">
+			  		<tr>
+			  			<td class="help-table-head ">ALIAS : Créer un alias pour une commande</td>
+			  		</tr>
+			  	</table>
+			  	<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Créer un alias (dans le fichier "/etc/profile.d/my_rules.sh" par exemple)</td>
+					  <td class="help-table-command">alias nom_alias='commande'</td>		
+					</tr>
+				</table>
+
+			  	<br><br>
+
+			  	<table class="help-table" id="ln">
+			  		<tr>
+			  			<td class="help-table-head ">LN : Créer un lien</td>
+			  		</tr>
+			  	</table>
+			  	<table class="help-table">
+						<tr>
+					  <td class="help-table-entry">Créer un lien symbolique</td>
+					  <td class="help-table-command">ln -s nom_du_fichier nom_du_lien</td>		
+					</tr>
+				</table>
+
+			  	<br><br>
+
+				<table class="help-table" id="ls">
+					<tr>
+			  			<td class="help-table-head ">LS : Lister le contenu d'un dossier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Lister le contenu d'un dossier</td>
+					  <td class="help-table-command">ls chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Lister le contenu d'un dossier en détail</td>
+					  <td class="help-table-command">ls -l chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Lister le contenu d'un dossier, y compris les dossiers cachés</td>
+					  <td class="help-table-command">ls -a chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Lister le contenu d'un dossier avec la taille des fichiers</td>
+					  <td class="help-table-command">ls -h chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Trier les fichiers par date, du plus récent au plus ancien</td>
+					  <td class="help-table-command">ls -t chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Trier les fichiers par taille décroissante</td>
+					  <td class="help-table-command">ls -S chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Inverser le tri</td>
+					  <td class="help-table-command">ls -r chemin_dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compter le nombre de fichiers présents dans un dossier</td>
+					  <td class="help-table-command">ls -al | wc -l</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compter le nombre de fichiers présents dans un dossier, sans compter "." et ".."</td>
+					  <td class="help-table-command">ls -1 | wc -l</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="ldd">
+					<tr>
+			  			<td class="help-table-head ">LDD : Lister les dépendances</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Lister les dépendances d'un exécutable</td>
+					  <td class="help-table-command">ldd -v nom_executable</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="head">
+					<tr>
+			  			<td class="help-table-head ">HEAD : Voir le début d'un fichier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Voir les premières lignes d'un fichier</td>
+					  <td class="help-table-command">head fichier.txt</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Supprimer les (n) premières lignes d'un fichier (en gardant un fichier bak)</td>
+					  <td class="help-table-command">head -(n) fichier.txt > nouveau_fichier.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="tail">
+					<tr>
+			  			<td class="help-table-head ">TAIL : Voir la fin d'un fichier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Voir les dernières lignes d'un fichier</td>
+					  <td class="help-table-command">tail fichier.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="date">
+					<tr>
+			  			<td class="help-table-head ">DATE : Manipuler des dates</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Afficher la date</td>
+					  <td class="help-table-command">date</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Afficher la date au format temps universelle UTC</td>
+					  <td class="help-table-command">date -u</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Afficher la date sous forme de timestamp (nombres de secondes écoulées depuis le 01/01/1970 à 00:00:00)</td>
+					  <td class="help-table-command">date +%s</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Afficher la date d'une façon structurée</td>
+					  <td class="help-table-command">date -u +"%Y-%m-%d %H:%M:%S UTC"</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Afficher une date spécifique sous forme de timestamp</td>
+					  <td class="help-table-command">date -d "yyyy-mm-dd HH:MM:SS" +%s</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Convertir un timestamp en date</td>
+					  <td class="help-table-command">date -d @timestamp</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Convertir un timestamp en date sous le format "YYYY-MM-DD HH:mm:ss"</td>
+					  <td class="help-table-command">date -d @timestamp '+%Y-%m-%d %H:%M:%S'</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="top">
+					<tr>
+			  			<td class="help-table-head ">TOP : Afficher les processus</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Affiche les processus actuellement en cours</td>
+					  <td class="help-table-command">top</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="free">
+					<tr>
+			  			<td class="help-table-head ">FREE : Afficher la mémoire</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+						<tr>
+					  <td class="help-table-entry">Affiche la mémoire disponible</td>
+					  <td class="help-table-command">free</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="paste">
+					<tr>
+			  			<td class="help-table-head ">PASTE : Copier un fichier dans un autre</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Créer un fichier contenant les colonnes d'un fichier suivi des colonnes d'un second</td>
+					  <td class="help-table-command">paste fichier_1.txt fichier_2.txt >> fichier_3.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="sort">
+					<tr>
+			  			<td class="help-table-head ">SORT : Trier un fichier suivant une clé</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Trier un fichier texte suivant une clé (par rapport à une colonne repérée par son numéro : 1, 2, etc ...)</td>
+					  <td class="help-table-command">sort -k(clé) fichier.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="sed">
+					<tr>
+			  			<td class="help-table-head ">SED : Substituer un mot par un autre</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Substituer un mot par un autre dans un fichier</td>
+					  <td class="help-table-command">sed -i -r 's/mot_a_substituer/nouveau_mot/g' nom_du_fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Supprimer les (n) dernieres lignes d'un fichier (en gardant un fichier bak)</td>
+					  <td class="help-table-command">sed -i.bak "1,(n)d" fichier.txt</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Supprimer toutes lignes d'un fichier contenant le mot "(mot)"</td>
+					  <td class="help-table-command">sed -i '/(mot)/d' fichier.txt </td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="grep">
+					<tr>
+			  			<td class="help-table-head ">GREP : capturer une chaine de caractères</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Afficher les lignes (et le numéro de ligne) contenant le mot "(mot)" dans un fichier</td>
+					  <td class="help-table-command">grep -n (mot) fichier.txt</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compter le nombre de lignes contenant le mot "(mot)" dans un fichier</td>
+					  <td class="help-table-command">grep -n (mot) fichier.txt | wc -l</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="kill">
+					<tr>
+			  			<td class="help-table-head ">KILL : Tuer un processus</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Tuer un processus</td>
+					  <td class="help-table-command">kill pid_processus</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Tuer violemment un processus (forcer)</td>
+					  <td class="help-table-command">kill 9 pid_processus</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="dollar">
+					<tr>
+			  			<td class="help-table-head ">Opérateur $ : Interpréter une commande</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Interpréter une commande</td>
+					  <td class="help-table-command">$( commande )</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Interpréter un calcul arithmétique</td>
+					  <td class="help-table-command">$(( calcul ))</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une sous-chaine d'une chaine contenue dans une variable</td>
+					  <td class="help-table-command">${variable:debut:nombre_de_caractères}</td>		
+					</tr>
+				</table>
+
+				<br><br>	
+
+				<table class="help-table" id="screenshot">
+					<tr>
+			  			<td class="help-table-head ">GNOME-SCREENSHOT : Faire une capture d'écran avec le bureau Gnome</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Faire une capture d'écran</td>
+					  <td class="help-table-command">gnome-screenshot</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture de la fenêtre qui a le focus</td>
+					  <td class="help-table-command">gnome-screenshot --window</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture de la fenêtre ou de l'écran, après le délai renseigné en secondes</td>
+					  <td class="help-table-command">gnome-screenshot --delay=10</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture qui comprend les bords de l'écran</td>
+					  <td class="help-table-command">gnome-screenshot --include-border</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture et ajouter un effet ombré tout autour</td>
+					  <td class="help-table-command">gnome-screenshot --border-effect=shadow</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture de la fenêtre ou de l'écran, et entourer la capture d'un cadre</td>
+					  <td class="help-table-command">gnome-screenshot --border-effect=border</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre une capture de la zone que vous délimiterez avec la souris</td>
+					  <td class="help-table-command">gnome-screenshot --area</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="git">
+					<tr>
+			  			<td class="help-table-head ">GIT : versionner du code</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Versionner un dossier avec GIT</td>
+					  <td class="help-table-command">git init</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Verifier l'etat d'un dossier versionne avec GIT et de ses fichiers</td>
+					  <td class="help-table-command">git status</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Ajouter un fichier</td>
+					  <td class="help-table-command">git add</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Commiter un fichier</td>
+					  <td class="help-table-command">git commit -m "commentaire"</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Indexer et commiter un fichier a la suite (raccourci)</td>
+					  <td class="help-table-command">git commit -am "commentaire"</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Consulter l'historique des commit</td>
+					  <td class="help-table-command">git log</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Récupérer un projet sur GitHub</td>
+					  <td class="help-table-command">git clone adresse_du_repository</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Envoyer fichier sur GitHub (apres commit)</td>
+					  <td class="help-table-command">git push origin master</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Recuperer un fichier depuis GitHub</td>
+					  <td class="help-table-command">git pull origin master</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Verifier les branches presentes</td>
+					  <td class="help-table-command">git branch</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Creer une branche nommee nom_branche</td>
+					  <td class="help-table-command">git branch nom_branche</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Se placer sur une branche</td>
+					  <td class="help-table-command">git checkout nom_branche</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Fusionner une branche nommee nom_branche avec la branche actuelle (sur laquelle on se trouve)</td>
+					  <td class="help-table-command">git merge nom_branche</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Mettre de cote une modification (les fichiers ne prendront donc pas en compte la derniere modification en cours)</td>
+					  <td class="help-table-command">git stash</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Prendre en compte la modification en cours (mise de cote jusqu'a present)</td>
+					  <td class="help-table-command">git stash pop</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="ncdump">
+					<tr>
+			  			<td class="help-table-head ">NCDUMP : Visualiser le contenu d'un fichier NetCDF</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Visualiser les variables</td>
+					  <td class="help-table-command">ncdump -h fichier.nc</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Visualiser la valeur d'une variable</td>
+					  <td class="help-table-command">ncdump fichier.nc -v variable</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="awk">
+					<tr>
+			  			<td class="help-table-head ">AWK : Manipuler un fichier par colonne</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Afficher la colonne n° X d'un fichier texte ayant comme séparateur de champ FS (par défaut : " ")</td>
+					  <td class="help-table-command">awk -F "FS" '{ print $X }' fichier.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="chmod">
+					<tr>
+			  			<td class="help-table-head ">CHMOD : Changer les droits sur un fichier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Ajouter des droits à une entité</td>
+					  <td class="help-table-command">chmod entité+droits fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Enlever des droits à une entité</td>
+					  <td class="help-table-command">chmod entité-droits fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Ajouter (enlever) des droits à une entité d'une façon récursive sur les tous les fichiers du dossier</td>
+					  <td class="help-table-command">chmod -R entité+(-)droits dossier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">a (all)</td>
+					  <td class="help-table-command">Toutes les entités</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">u (user)</td>
+					  <td class="help-table-command">Le propriétaire du fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">g (group)</td>
+					  <td class="help-table-command">Le groupe auquel appartient le fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">o (others)</td>
+					  <td class="help-table-command">Les autres personnes (autres que le propriétaire et le groupe)</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">r (reading)</td>
+					  <td class="help-table-command">Droit de lecture</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">w (writing)</td>
+					  <td class="help-table-command">Droit d'écriture</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">x (execute)</td>
+					  <td class="help-table-command">Droit d'exécution</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Affecter des droits aux entités u, g et o</td>
+					  <td class="help-table-command">chmod ugo (u, g et o sont des chiffres compris entre 0 et 6)</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Aucun droit</td>
+					  <td class="help-table-command">0</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit d'exécution seulement</td>
+					  <td class="help-table-command">1</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit d'écriture seulement</td>
+					  <td class="help-table-command">2</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit d'écriture et d'exécution</td>
+					  <td class="help-table-command">3</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit de lecture seulement</td>
+					  <td class="help-table-command">4</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit de lecture et d'exécution</td>
+					  <td class="help-table-command">3</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Droit de lecture et d'écriture</td>
+					  <td class="help-table-command">6</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Tous les droits</td>
+					  <td class="help-table-command">7</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="chown">
+					<tr>
+			  			<td class="help-table-head ">CHOWN : Changer le propriétaire d'un fichier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Changer le propiétaire d'un fichier</td>
+					  <td class="help-table-command">chown utilisateur:groupe fichier</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="read">
+					<tr>
+			  			<td class="help-table-head ">READ : Lire un fichier</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Lire un fichier ligne par ligne</td>
+					  <td class="help-table-command">while read ligne; do commande_sur_ligne; done < fichier.txt</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="sub">
+					<tr>
+			  			<td class="help-table-head ">Sublime Text : l'éditeur de texte vraiment sublime !</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">CMD + P</td>
+					  <td class="help-table-command">Ouvrir un fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD + SHIFT + P</td>
+					  <td class="help-table-command">Ouvrir la palette de commandes</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD + R</td>
+					  <td class="help-table-command">Accéder aux fonctions codées dans le fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD + G</td>
+					  <td class="help-table-command">Se placer à une ligne précise dans le fichier</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD (maintenu) + sélection </td>
+					  <td class="help-table-command">Sélection de plusieurs éléments simultanément</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">ALT (maintenu) + sélection verticale</td>
+					  <td class="help-table-command">Sélection verticale de plusieurs éléments simultanément</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD + ALT + P puis taper "install"</td>
+					  <td class="help-table-command">Installer un plug-in Sublim Text avec Package Control</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">CMD + SHIFT + /</td>
+					  <td class="help-table-command">Commenter un morcezu de code</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">1</td>
+					  <td class="help-table-command">Package Control</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">2</td>
+					  <td class="help-table-command">Emmet</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">3</td>
+					  <td class="help-table-command">Alignment</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<table class="help-table" id="firefox">
+					<tr>
+			  			<td class="help-table-head ">Mozilla Firefox : le navigateur des développeurs web!</td>
+					</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Firebug</td>
+					  <td class="help-table-command">Scanner de page web</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Web Development Toolbar</td>
+					  <td class="help-table-command">Une barre d'outils intégrée pour le développement web</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Ghostery</td>
+					  <td class="help-table-command">Analyseur de mouchards web</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">NoScript</td>
+					  <td class="help-table-command">Sécurité contre l'injection de scripts</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">MeasureIt</td>
+					  <td class="help-table-command">Une règle intégrée pour bien placer ses petits blocs en CSS !</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">ColorZilla</td>
+					  <td class="help-table-command">Pipeter une couleur sur une page web ...</td>		
+					</tr>
+				</table>
+
+				<br>
+
+				<table class="help-table" id="sass">
+					<tr>
+			  			<td class="help-table-head ">SASS : le CSS survitaminé !</td>
+			  		</tr>
+				</table>
+				<table class="help-table">
+					<tr>
+					  <td class="help-table-entry">Compiler un fichier .scss en fichier .css</td>
+					  <td class="help-table-command">sass fichier.scss:fichier.css</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compiler un fichier .scss en fichier .css automatiquement à chaque changement</td>
+					  <td class="help-table-command">sass --watch fichier.scss:fichier.css</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compiler un fichier .scss en phase de développement (étendu)</td>
+					  <td class="help-table-command">sass --watch fichier.scss:fichier.css --style expanded</td>		
+					</tr>
+					<tr>
+					  <td class="help-table-entry">Compiler un fichier .scss en phase de production (compressé)</td>
+					  <td class="help-table-command">sass --watch fichier.scss:fichier.css --style compressed</td>		
+					</tr>
+				</table>
+
+				<br><br>
+
+				<div class="hidden-site" id="hidden-site"></div>
+
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+	
+</body>
+	
+</html>

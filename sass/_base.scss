@@ -1,0 +1,170 @@
+/**************************************
+				BASE
+***************************************/
+html, body {
+	
+	height: 100%; 
+
+	font-family: Roboto;
+	font-size: 16px;
+	color: #000;
+
+	line-height: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+	margin: 1rem 0;
+
+	width: 250px;
+
+	text-transform: uppercase;
+}
+
+h1 { font-size: 1.2rem; border-bottom: solid 1px #000; }
+h2, h3, h4, h5, h6 { font-size: 1rem; }
+
+p { margin-bottom: 1rem; }
+
+ul { 
+
+	margin-left: 20px; 
+	margin-bottom: 1.5em;
+
+	list-style: square inside;
+
+	line-height: 1.5rem;
+	
+	overflow: hidden;
+
+	ul, ol {
+
+		margin-bottom: 0;
+
+		list-style: disc inside;
+	}
+}
+
+ol {
+	
+	margin-left: 20px;
+	margin-bottom: 1.5em;
+
+	list-style: decimal inside;
+	
+	overflow: hidden;
+
+	ol, ul {
+
+		margin-bottom: 0;
+
+		list-style: lower-roman inside;
+	}
+}
+
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover, &:visited {
+
+		color: inherit;
+	}
+}
+
+
+strong { 
+	
+	color: #333;
+	font-weight: bold; 
+}
+
+
+blockquote {
+
+	margin: 0 60px 0 45px;
+	margin-bottom: 1.5em;
+	padding-left: 15px;
+
+	border-left: 5px solid #DDD;
+
+	font-family: Roboto, serif;
+	font-style: italic;
+	
+	overflow: hidden;
+
+	p { margin-bottom: 0; }
+
+	em { 
+		
+		display: block;
+
+		font-family: "PT sans", Arial, Helvetica, sans-serif;
+		font-style: normal;
+		text-align: right;
+
+		&:before { content: '- '; }
+	}
+}
+
+
+img {
+
+ 	width: 100%;
+ 	height: auto;
+ 	
+ 	max-width: 200px;
+}
+
+img.alignleft {
+		
+	float: left;
+	margin-right: 20px;
+}
+
+img.alignright {
+	
+	float: right;
+	margin-left: 20px;
+}
+
+img.aligncenter {
+
+	display: block;
+
+	max-width: 300px;
+
+	margin: 2rem auto;
+}
+   
+img.splashscreen {
+
+	display: block;
+	margin: 2rem auto;
+
+	max-width: 400px;
+}
+
+figure {
+	
+	max-width: 300px;
+
+	img {
+
+		width: 100%;
+		height: auto;
+	}
+
+	figcaption {
+
+		height: 2rem;
+
+		line-height: 2rem;
+		text-align: center;
+	}
+}
+
+figure.one { display: block; margin: 2rem auto; }
+
+figure.multi { display: inline-block; margin: 2rem 0.5rem; }

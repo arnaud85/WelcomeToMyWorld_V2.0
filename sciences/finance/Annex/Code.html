@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bibliographie</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+	<body>
+
+	<div class="pusher">
+
+		<div class="main-container">
+	
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container">	
+
+				<h1>Formulaire</h1>
+				
+				<h2>Loi normale centrée réduite</h2>
+				
+				<p>
+				$$ \boxed{ n(x) = \frac{1}{\sqrt(2\Pi)}\exp(-\frac{x^{2}}{2}) } $$
+				</p>
+				
+				<br/>
+				
+				<p><strong>Code C++ : Loi normale centrée réduite</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">n</span>(<var>const double&</var> z)<br/> 
+				{<br/>
+				&nbsp;&nbsp;&nbsp;	<span class="key">return</span > (1.0/sqrt(2.0*M_PI))*exp(-0.5*z*z);<br/>
+				}<br/>
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Loi normale centrée réduite cumulée</h2>
+				
+				<p>
+				$$ \boxed{ N(x) = \frac{1}{\sqrt(2\Pi)}\int_{-\infty}^{d1}\exp(-\frac{x^{2}}{2})dx } $$
+				</p>
+				
+				<br/>
+
+				<p><strong>Code C++ : Loi normale centrée réduite cumulée</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">N</span>(<var>const double&</var> z)<br/> 
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<span class="key">if</span> (z > 6.0)<br/> 
+					&nbsp;&nbsp;&nbsp;{ <br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<span class="key">return</span> 1.0; <br/>
+					&nbsp;&nbsp;&nbsp;}<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">if</span> (z < -6.0) { <br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<span class="key">return</span> 0.0; <br/>
+					&nbsp;&nbsp;&nbsp;}<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<var>double</var> b1 = 0.31938153;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> b2 = -0.356563782;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> b3 = 1.781477937;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> b4 = -1.821255978;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> b5 = 1.330274429;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> p = 0.2316419;<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> c2 = 0.3989423;<br/>
+					
+					&nbsp;&nbsp;&nbsp;<var>double</var> a=fabs(z);<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<var>double</var> t = 1.0/(1.0+a*p);<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<var>double</var> b = c2*exp((-z)*(z/2.0));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<var>double</var> n = ((((b5*t+b4)*t+b3)*t+b2)*t+b1)*t;<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;n = 1.0 - b*n;<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">if</span> ( z < 0.0 ) <br/>
+					&nbsp;&nbsp;&nbsp;{<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	n = 1.0 - n;<br/>
+					&nbsp;&nbsp;&nbsp;}<br/><br/>
+				
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span > n;<br/>
+				}<br/>
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Formule binomiale à une seule période :</h2>
+
+				<p>
+				$$ \boxed{ V_{0} = \frac{1}{1 + r}[q \times V_{1}(hS_{0}) + (1 - q) \times V_{1}(bS_{0})] } $$
+				</p>
+				
+				<br/>
+				
+				<p><strong>Code C++ : Formule binomiale à une seule période pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">binomial_single_period_call_u_d</span>(<var>const double&</var> S, <var>const double&</var> K, 
+				<var>const double&</var> r, <var>const double&</var> up, <var>const double&</var> down)<br/>
+				{<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> u = 1 + (up/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> d = 1 - (down/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_up = (exp(r/100) - d)/(u - d);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_down = 1.0-p_up;<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> call_up = max(0.0,(u*S - K));<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> call_down = max(0.0,(d*S - K));<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">return</span> exp(-r/100)*(p_up*call_up + p_down*call_down);<br/>
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<p><strong>Code C++ : Formule binomiale à une seule période pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">binomial_single_period_put_u_d</span>(<var>const double&</var> S, <var>const double&</var> K, 
+				<var>const double&</var> r, <var>const double&</var> up, <var>const double&</var> down)<br/>
+				{<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> u = 1 + (up/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> d = 1 - (down/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_up = (exp(r/100) - d)/(u - d);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_down = 1.0-p_up;<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> put_up = max(0.0, (K - u*S));<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> put_down = max(0.0, (K - d*S));<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">return</span> exp(-r/100)*(p_up*put_up + p_down*put_down)<br/>
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Formule de Cox-Ross-Rubinstein :</h2>
+				
+				<p>
+				$$ \boxed{ V_{0}(S_{0}) = \frac{1}{(1 + r)^{n}} \sum_{k = 0}^{n} C\begin{pmatrix} n \\ k \end{pmatrix} \; q^{n} \; (1 - q)^{n - k} \;
+				V_{t}(h^{n}b^{n - k}S_{0}) } $$
+				</p>
+				
+				<br/>
+				
+				<p><strong>Code C++ : Formule de Cox-Ross-Rubinstein pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">binomial_call_u_d</span>(<var>const double&</var> S, <var>const double&</var> K, 
+				<var>const double&</var> r, <var>const double&</var> up, <var>const double&</var> down, <var>const int&</var> n_steps)<br/>
+				{<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> u = 1 + (up/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> d = 1 - (down/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_up = (exp(r/100) - d)/(u - d);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_down = 1.0-p_up;<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<var>vector<double></var> prices(n_steps + 1); <br/>
+						&nbsp;&nbsp;&nbsp;prices[0] = S*<span class="key">pow</span>(d, n_steps);<br/> 
+	
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> i = 1; i <= n_steps; ++i)<br/>
+						&nbsp;&nbsp;&nbsp;{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	prices[i] = u*u*prices[i - 1];<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<var>vector<double></var> call_values(n_steps + 1); <br/>
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> i = 0; i <= n_steps; ++i) <br/>
+						&nbsp;&nbsp;&nbsp;{ <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	call_values[i] = max(0.0, (prices[i] - K));<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> j = n_steps - 1; j >= 0; --j)<br/>
+						&nbsp;&nbsp;&nbsp;{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	for (<var>int</var> i = 0; i <= j; ++i) <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		call_values[i] = (p_up*call_values[i + 1] +
+																					p_down*call_values[i])*exp(-r/100);<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	}<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">return</span> call_values[0];<br/>
+				}
+				</code>
+				</p>
+				
+				<br><br>
+				
+				<p><strong>Code C++ : Formule de Cox-Ross-Rubinstein pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">binomial_put_u_d</span>(<var>const double&</var> S, <var>const double&</var> K, 
+				<var>const double&</var> r, <var>const double&</var> up, <var>const double&</var> down, <var>const int&</var> n_steps)<br/>
+				{<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> u = 1 + (up/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> d = 1 - (down/100);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_up = (exp(r/100) - d)/(u - d);<br/>
+						&nbsp;&nbsp;&nbsp;<var>double</var> p_down = 1.0-p_up;<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<var>vector<double></var> prices(n_steps + 1); <br/>
+						&nbsp;&nbsp;&nbsp;prices[0] = S*<span class="key">pow</span>(d, n_steps);<br/> 
+	
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> i = 1; i <= n_steps; ++i)<br/>
+						&nbsp;&nbsp;&nbsp;{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	prices[i] = u*u*prices[i - 1];<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<var>vector<double></var> put_values(n_steps + 1); <br/>
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> i = 0; i <= n_steps; ++i) <br/>
+						&nbsp;&nbsp;&nbsp;{ <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	put_values[i] = max(0.0, (K - prices[i]));<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">for</span> (<var>int</var> j = n_steps - 1; j >= 0; --j)<br/>
+						&nbsp;&nbsp;&nbsp;{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	for (<var>int</var> i = 0; i <= j; ++i) <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		put_values[i] = (p_up*put_values[i + 1] +
+																					p_down*put_values[i])*exp(-r/100);<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	}<br/>
+						&nbsp;&nbsp;&nbsp;}<br/><br/>
+						
+						&nbsp;&nbsp;&nbsp;<span class="key">return</span> put_values[0];<br/>
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Formule de Black-Scholes :</h2>
+				
+				<p>
+				$$
+				\boxed 
+				{
+				\left.
+					\begin{array}{r c l}
+					C(S, t) &=& S N(d1) - K \exp(-r(T - t)) N(d2)\\
+					P(S, t) &=& K \exp(-r(T - t)) N(-d2) - S N(-d1)\\
+					\end{array}
+				\right.
+				}
+				$$	
+				</p>
+				
+				<br/>
+				<p><strong>Code C++ : Formule de Black-Scholes pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_CALL</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> S*<span class="function">N</span>(d1) 
+																		- K*exp(-(r/100)*t)*<span class="function">N</span>(d2);<br/>
+				}
+				</code>
+				</p>
+				
+				<br><br>
+				
+				<p><strong>Code C++ : Formule de Black-Scholes pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_PUT</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> K*exp(-(r/100)*t)*<span class="function">N</span>(-d2)
+																		- S*<span class="function">N</span>(-d1);<br/> 											
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Les grecques : Delta</h2>
+				
+				<p>
+				$$
+				\boxed 
+				{
+				\left.
+					\begin{array}{r c l}
+					\delta_{call} &=& N(d1)\\
+					\delta_{put} &=& N(d1) - 1\\
+					\end{array}
+				\right.
+				}
+				$$	
+				</p>
+				
+				<br><br>
+				
+				<p><strong>Code C++ : Delta pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_DELTA_CALL</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> <span class="function">N</span>(d1);<br/> 											
+				}
+				</code>
+				</p>
+
+				<br><br>
+				
+				<p><strong>Code C++ : Delta pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_DELTA_PUT</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> <span class="function">N</span>(d1) - 1;<br/> 											
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Les grecques : Gamma</h2>
+				
+				<p>
+				$$ \boxed{ \gamma = \frac{N'(d1)}{S \sigma \sqrt t} } $$
+				</p>
+				
+				<br><br>
+				
+				<p><strong>Code C++ : Gamma</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_GAMMA</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> <span class="function">n</span>(d1)/(S*(sigma/100)
+														* <span class="key">sqrt</span>(t));<br/> 											
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Les grecques : Theta</h2>
+				
+				<p>
+				$$
+				\boxed
+				{
+				\left.
+					\begin{array}{r c l}
+					\theta_{call} &=& - \frac{S N'(d1) \sigma}{2 \sqrt t} - r K \exp(-r t)  N(d2)\\
+					\theta_{put} &=& - \frac{S N'(d1) \sigma}{2 \sqrt t} + r K \exp(-r t)  N(-d2)\\
+					\end{array}
+				\right.
+				}
+				$$
+				</p>
+				
+				<br><br>
+				
+				<p><strong>Code C++ : Theta pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_THETA_CALL</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> -(S*(sigma/100)*<span class="function">n</span)/(2*<span class="key">sqrt</span>(t)) - (r/100)*K*<span class="key">exp</span>(-(r/100)*t)*<span class="function">N</span>(d2);														
+				}
+				</code>
+				</p>
+
+				<br><br>
+				
+				<p><strong>Code C++ : Theta pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_THETA_PUT</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> -(S*(sigma/100)*<span class="function">n</span)/(2*<span class="key">sqrt</span>(t)) + (r/100)*K*<span class="key">exp</span>(-(r/100)*t)*<span class="function">N</span>(-d2);										
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Les grecques : Vega</h2>
+				
+				<p>
+				$$ \boxed{ \nu = S \sqrt t N'(d1) } $$
+				</p>
+				
+				<br/>
+				
+				<p><strong>Code C++ : Vega</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_VEGA</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> K*t*<span class="key">exp</span>(-(r/100)*t)*</span>N</span>(d2);<br/>										
+				}
+				</code>
+				</p>
+				
+				<br><br><br><br>
+				
+				<h2>Les grecques : Rho</h2>
+				
+				<p>
+				$$
+				\boxed
+				{
+				\left.
+					\begin{array}{r c l}
+					\rho_{call} &=& K t \exp(-r t) N(d2)\\
+					\rho_{put} &=& - K t \exp(-r t) N(-d2)\\
+					\end{array}
+				\right.
+				}
+				$$
+				</p>
+				
+				<br/>
+				
+				<p><strong>Code C++ : Rho pour un call</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_RHO_CALL</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> K*t*<span class="key">exp</span>(-(r/100)*t)*<span class="function">N</span>(d2);<br/>										
+				}
+				</code>
+				</p>
+
+				<br><br>
+				
+				<p><strong>Code C++ : Rho pour un put</strong></p>
+				<p class="code">
+				<code>
+				<var>double</var> <span class="function">Black_Scholes_RHO_PUT</span>(<var>const double&</var> S, <var>const double&</var> K,
+														<var>const double&</var> r, 
+														<var>const double&</var> sigma, <var>const double&</var> t)<br/>
+				{<br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d1 = (<span class="key">log</span>(S/K) + (r/100)*t)/((sigma/100)*<span class="key">sqrt</span>(t)) + 0.5*(sigma/100)*<span class="key">sqrt</span>(t);<br/><br/>
+					&nbsp;&nbsp;&nbsp;<var>double</var> d2 = d1 - ((sigma/100)*<span class="key">sqrt</span>(t));<br/><br/>
+					
+					&nbsp;&nbsp;&nbsp;<span class="key">return</span> -K*t*<span class="key">exp</span>(-(r/100)*t)*<span class="function">N</span>(-d2);<br/>									
+				}
+				</code>
+				</p>
+
+			<div class="hidden-site" id="hidden-site"></div>
+					
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+	
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+</body>
+
+</html>

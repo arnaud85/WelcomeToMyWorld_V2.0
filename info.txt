@@ -1,0 +1,30 @@
+								CSS STYLE 
+
+	Describe all elements in the web page, from the bases to the details :
+
+		- BASE
+		- LAYOUT
+		- MODULE
+		- STATE
+		- THEME
+
+
+	With the pattern :
+
+		element {
+
+			BOX
+			...
+
+			BORDER
+			...
+
+			BACKGROUND
+			...
+
+			TEXT
+			...
+
+			OTHER	
+			...
+		}

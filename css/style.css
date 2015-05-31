@@ -1,0 +1,413 @@
+/**************************************
+				RESET
+***************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**************************************
+				BASE
+***************************************/
+html, body {
+  height: 100%;
+  font-family: Roboto;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+  width: 250px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.2rem;
+  border-bottom: solid 1px #000;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 1.5em;
+  list-style: square inside;
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+ul ul, ul ol {
+  margin-bottom: 0;
+  list-style: disc inside;
+}
+
+ol {
+  margin-left: 20px;
+  margin-bottom: 1.5em;
+  list-style: decimal inside;
+  overflow: hidden;
+}
+ol ol, ol ul {
+  margin-bottom: 0;
+  list-style: lower-roman inside;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:visited {
+  color: inherit;
+}
+
+strong {
+  color: #333;
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 0 60px 0 45px;
+  margin-bottom: 1.5em;
+  padding-left: 15px;
+  border-left: 5px solid #DDD;
+  font-family: Roboto, serif;
+  font-style: italic;
+  overflow: hidden;
+}
+blockquote p {
+  margin-bottom: 0;
+}
+blockquote em {
+  display: block;
+  font-family: "PT sans", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  text-align: right;
+}
+blockquote em:before {
+  content: '- ';
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+}
+
+img.alignleft {
+  float: left;
+  margin-right: 20px;
+}
+
+img.alignright {
+  float: right;
+  margin-left: 20px;
+}
+
+img.aligncenter {
+  display: block;
+  max-width: 300px;
+  margin: 2rem auto;
+}
+
+img.splashscreen {
+  display: block;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+figure {
+  max-width: 300px;
+}
+figure img {
+  width: 100%;
+  height: auto;
+}
+figure figcaption {
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+figure.one {
+  display: block;
+  margin: 2rem auto;
+}
+
+figure.multi {
+  display: inline-block;
+  margin: 2rem 0.5rem;
+}
+
+/**************************************
+				MODULES
+***************************************/
+.main-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.jumbotron {
+  position: relative;
+  margin-bottom: 35px;
+  height: 300px;
+  color: #FFF;
+  background-color: #c4c4c4;
+  overflow: hidden;
+}
+.jumbotron h1 {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  width: 100%;
+  font-size: 1.1rem;
+  font-style: italic;
+  border-bottom: none;
+}
+.jumbotron blockquote {
+  position: absolute;
+  top: 120px;
+  left: 5px;
+}
+
+header {
+  width: 100%;
+  height: 66px;
+  background-color: #ddd;
+  z-index: 1000;
+}
+header .header_icon {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 66px;
+  cursor: pointer;
+}
+header .header_icon:after {
+  position: absolute;
+  content: '';
+  top: 16px;
+  left: 15px;
+  width: 1rem;
+  height: 0;
+  -moz-box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+  -webkit-box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+  box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+}
+header nav {
+  position: absolute;
+  top: 0;
+  right: -200px;
+  bottom: 0;
+  background-color: #d0d0d0;
+  color: #FFF;
+}
+header nav a {
+  display: block;
+  width: 200px;
+  height: 66px;
+  border-bottom: solid 1px #eaeaea;
+  line-height: 66px;
+  font-weight: bold;
+  text-align: center;
+}
+header nav a:hover {
+  color: #b7b7b7;
+}
+
+.container {
+  margin: 0 8%;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.hidden-menu .pusher {
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -moz-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -webkit-transform: translateX(-200px);
+  transform: translateX(-200px);
+}
+.hidden-menu .hidden-site {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+a.thumb {
+  position: relative;
+  display: block;
+  max-width: 200px;
+  margin: 1.5rem auto;
+}
+a.thumb img {
+  width: 100%;
+  height: auto;
+}
+a.thumb div {
+  height: 1.5rem;
+  text-align: center;
+  background-color: #DDD;
+  color: #FFF;
+}
+a.thumb:hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 150px;
+  clear: both;
+}
+
+/**************************************
+				RESPONSIVE
+***************************************/
+@media only screen and (min-width: 450px) {
+  .main-container {
+    padding-top: 66px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  header .header_icon {
+    display: none;
+  }
+  header nav {
+    position: static;
+  }
+  header nav a {
+    float: left;
+    width: 100px;
+    font-weight: bold;
+  }
+
+  .jumbotron h1 {
+    top: 40px;
+    left: 100px;
+    font-size: 1.2rem;
+  }
+  .jumbotron blockquote {
+    top: 140px;
+    left: 100px;
+  }
+
+  a.thumb {
+    display: inline-block;
+    margin-right: 1rem;
+    width: 30%;
+  }
+}
+/* a.thumb 
+{
+
+	@media only screen and (min-width: $medium-device) 
+	{
+		display: inline-block;
+
+		margin-right: 1rem;
+
+		width: 30%;
+	}
+} */
+@media only screen and (min-width: 960px) {
+  nav {
+    margin-left: 150px;
+  }
+  nav a {
+    margin-right: 50px;
+  }
+
+  .jumbotron h1 {
+    top: 40px;
+    left: 200px;
+    font-size: 1.4rem;
+  }
+  .jumbotron blockquote {
+    top: 140px;
+    left: 200px;
+  }
+}

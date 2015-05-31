@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sport</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/grid.css">
+</head>
+
+<body>
+
+	<div class="pusher">
+
+		<div class="main-container">
+			
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+			
+			<div class="container">	
+  	
+			  	<h1>La connexion sécurisée avec une machine distante</h1>
+
+			  	<p>Prendre le contrôle d'une machine distante est très facile sous Linux. Pour ce faire, nous nous servirons du protocole ssh, pour secure shell.</p>
+
+			  	<p>Ainsi, pour se connecter à la machine distante voulue, sous le nom <strong>login</strong>,  il suffit de connaitre l'adresse IP de la machine distante en question, ou bien le nom de celle-ci sur le réseau, et de rentrer la ligne de commande suivante : </p>
+
+			  	<p class="code">ssh login@nom_de_domaine</p>
+
+			  	<p>Le nom de domaine peut être soit l'<strong>adresse ip</strong> de la machine distante, soit un nom de domaine que l'on fera pointer vers l'adresse ip de la machine distante.</p>
+
+			  	<p>Pour avoir accès au bureau graphique de la machine distante, il faut préciser l'option <strong>X</strong> lors de l'appel à la commande précédente :</p>
+
+			  	<p class="code">ssh -X login@nom_de_domaine</p>
+
+			  	<p>Le terminal vous demande alors le mot de passe de l'utilsateur <strong>login</strong> qui tente de se connecter à distance à la machine <strong>nom_de_domaine</strong>. Il suffit de le fournir pour enfin se connecter.</p>
+
+			  	<p>Il est également possible de se connecter sans fournir de mot de passe à chaque fois. Il faut alors générer deux <strong>clés</strong> : 
+			  		<ul>
+			  			<li>Une <strong>clé privé</strong> : elle reste sur la machine locale et sert à déchiffrer la clé publique</li>
+			  			<li>Une <strong>clé publique</strong> : elle est envoyée sur la machine distante et système de reconnaissance. Elle permet donc de se connecter sans avoir à fournir un mot de passe (pourvu que l'on soit le bon utilisateur, cela va de soit!).</li>
+			  		</ul>
+			  	</p>
+
+			  	<p>Pour générer ces deux clés, on se sert de la commande suivante :</p>
+
+			  	<p class="code">ssh-keygen -t rsa</p>
+
+			  	<p>Les deux clés sont alors crées :
+			  		<ul>
+			  			<li>La clé privée : <strong>id_rsa</strong></li>
+			  			<li>La clé publique : <strong>id_rsa.pub</strong></li>
+			  		</ul>
+			  	</p>
+
+			  	<p>Ici, nous avons utilisé le <strong>système de cryptage RSA</strong></p>
+
+			  	<p>Ensuite, nous envoyons la clé sur la machine distante par l'intermédiaire de cette commande :</p>
+
+			  	<p class="code">ssh-copy-id -i id_rsa.pub login@nom_de_domaine</p>
+
+			  	<p>La clé apparit alors dans le dossier <strong>~/.ssh/</strong> de la machine distante, dans <strong>Authorized</strong>.</p>
+
+			  	<p>Maintenant, il suffit de taper la première commande que nous avons vue pour se connecter automatiquement sans fournir de mot de passe.</p>
+
+			  	<h3>Créer un <strong>alias</strong></h3>
+
+			  	<p>Souvent, nous tapons la même commande pour effectuer une action. De plus, cette commande peut être plus ou moins longue! Il serait donc pratique d'avoir un raccourci pour ne pas avoir à retaper la commande en entier à chaque fois ...</p>
+
+			  	<p>C'est exactement l'intérêt des <strong>alias</strong>. Un alias est un raccourci qui pointe vers une commande identique, mais beaucoup plus longue à taper !</p>
+
+			  	<p>Pour ce faire, il suffit de créer (ou d'éditer) un fichier exécutable sur lequel on stocke tous nos paramètres personnels. Celui-ci se trouve dans le dossier <strong>/etc/profile.d/</strong>. Par exemple, on peut créer le fichier <strong>my_rules.sh</strong> et y créer les alias voulus ... :</p>
+
+			  	<p class="code">alias nom_alias='commande'</p>
+
+			  	<p>Ce fichier sera exécuté dès le lancement du <strong>shell</strong>.</p>
+
+			 	<div class="hidden-site" id="hidden-site"></div>
+
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+	
+</body>
+	
+</html>

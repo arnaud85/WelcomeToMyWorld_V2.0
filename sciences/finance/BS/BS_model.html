@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Le modèle de Black-Scholes</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+	
+<body>
+	
+	<div class="pusher">
+
+		<div class="main-container">
+	
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container">
+
+				<h1>Le modèle de Black-Scholes</h1> 				
+
+				<p>Le <strong>modèle de Black-Scholes</strong> (ou encore <strong>Black-Scholes-Merton</strong>) est le modèle le plus utilisé
+				au monde quand on parle d'évaluation d'option. C'est un standard que chaque opérateur de marché connait sur le bout des doigts.</p>
+				
+				<p>Publié pour la première fois par ses auteurs <em>Fischer Black</em> et <em>Myron Scholes</em> en 1973, celui-ci a connu succès 
+				retentissant et s'est très vite imposé comme le <em>graal</em> des modèles de <em>pricing</em> d'option.</p>
+				
+				<p>Un peu plus tard, <em>Robert Merton</em> contribuera à l'amélioration de ce modèle ce qui lui vaudra de recevoir, en compagnie
+				de son collègue Myron Scholes, le prix Nobel d'économie en 1997 (Fischer Black étant décédé en 1995, il n'a pu recevoir 
+				le prix Nobel, mais sa contibution fut mentionné).</p>
+				
+				<p>Ultra usité et très réaliste dans une certaine mesure, ce modèle repose cependant sur des hypothèses fortes que l'on va
+				énoncer de ce pas :</p>
+				
+				<blockquote><strong>Modèle de Black-Scholes</strong>
+					<p><ul>
+						<li>L'option est <strong>européenne</strong> : l'échéance est fixée</li>
+						<li>Le modèle est <strong>continu</strong> et le prix de l'action suit un 
+								<strong>mouvement Brownien géométrique</strong></li>
+						<li>Le modèle respecte le <strong>principe de non-arbitrage</strong></li>
+						<li>La valeur de l'option sur l'actif sous-jacent est la solution de l'<strong>équation de Black-Scholes</strong> :
+							$$ 
+							\frac{\partial V}{\partial t} + r S \frac{\partial V}{\partial S} + 
+							\frac{1}{2}\sigma^{2}S^{2}\frac{\partial^{2} V}{\partial S^{2}} - r V = 0 
+							$$
+						</li>
+					</ul></p>
+				</blockquote>
+								
+				
+				<p>Nous allons chercher à résoudre cette équation dans le cas d'un <em>call</em> :
+				$$ V(S, t) = C(S, t) = Max\{S - K, 0\} $$
+				</p>
+				
+				<p>Bien sur, une fois la formule mise en évidence pour un <em>call</em>, il est extrêment simple de trouver celle utilisée
+				pour un <em>put</em>, ces deux formules étant symétriques de par <strong>la relation de parité call-put</strong>.</p>
+				
+				<a href="BS_formula.html">--> La formule de Black-Scholes</a>
+
+			<div class="hidden-site" id="hidden-site"></div>
+					
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+	
+</body>
+
+</html>

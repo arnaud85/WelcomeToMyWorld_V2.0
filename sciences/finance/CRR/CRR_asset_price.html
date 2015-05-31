@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CRR : prix de l'action</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+	
+<body>
+	
+	<div class="pusher">
+
+		<div class="main-container">
+	
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container">
+			
+				<h1>Prix de l'action</h1>
+				
+				<p>Comme expliqué précédemment, une action voit son prix évoluer au cours du temps, à la baisse comme à la hausse.
+				Mais comment allons-nous représenter ces fluctuations ?</p>
+				
+				<p>Ici, ce sera de manière extrêment simple! Ainsi, supposons que l'on achète une action A à un instant \(t\);
+				on notera sa valeur : \(S_{t}\). Quel sera son prix à l'instant d'après, que l'on notera \(t + 1 \) ?</p>
+				
+				<p>Le prix de l'actif A à l'instant \(t + 1 \) sera en général différent de son prix à l'instant \(t\).
+				Nous supposerons alors que le nouveau prix de l'action est soit inférieur à l'ancien prix, soit supérieur.
+				Nous avons donc seulement deux possibilités pour ce nouveau prix :
+				$$
+				\left\{
+					\begin{array}{r c l}
+					S_{t + 1, bas} &=& bas \times S_{t}\\
+					S_{t + 1, haut} &=& haut \times S_{t}\\
+					\end{array}
+				\right.
+				$$
+				</p>
+				
+				<p>Nous avons simplement borné le nouveau prix par la valeur maximale qu'il pourrait avoir et sa valeur minimale, par
+				l'intermédiaire des facteurs <em>bas</em> et <em>haut</em>, avec respectivement :
+				$$ 0 \leqslant bas \leqslant haut $$
+				</p>
+				
+				<p>Nous pouvons maintenant réitérer l'opération, puis encore et encore jusqu'à ce que celà soit suffisant.
+				Le temps va alors s'écouler par "pas", que nous appelerons <strong>périodes</strong>, et de ce fait une avancée dans le 
+				temps sera simplement simulé par le passage d'une période t à une période t + 1.</p>
+				
+				<p>A chaque pas de temps, le prix de l'actif sous-jacent à l'option ne peut prendre que 2 valeurs distinctes :
+				nous parlerons alors de <strong>modèle binomiale</strong>.</p>
+					
+				<p>Par opposition, il est tout à fait pssoible de construire un modèle où le temps s'écoulerait d'une manière continue 
+				(sans "trous" si vous préferez!) mais il s'agit là d'un autre modèle, appelé modèle de <strong>Black-Scholes</strong> sur lequel
+				nous reviendrons plus tard. A noter que ce dernier est un cas limite du modèle actuel, où le pas de temps tend vers 0.</p>
+
+				<p>Enfin, une dernière remarque s'impose concernant les facteurs <strong>bas</strong> et <strong>haut</strong> : les valeurs de ceux-ci sont
+				en général estimées via des méthodes statistiques sur l'historique du prix de l'actif au cours du temps et sont considérées 
+				comme constantes au cours du temps. Ceci peut s'avérer plus ou moins réaliste si l'on réitère le processus un grand nombre de fois.
+				Attention donc, comme nous le faisions remarquer quelques lignes plus haut, il faut garder à l'esprit que ce n'est qu'un modèle et 
+				personne ne peut prétendre qu'un modèle est le reflet parfait de la réalité ...</p>
+				
+				<a href="CRR_model.html">--> Le modèle de Cox-Ross-Rubinstein</a>
+						
+			<div class="hidden-site" id="hidden-site"></div>
+					
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+	
+</body>
+
+</html>

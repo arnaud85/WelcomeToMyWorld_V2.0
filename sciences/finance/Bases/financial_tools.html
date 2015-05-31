@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Outils financiers</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+	
+<body>
+	
+	<div class="pusher">
+
+		<div class="main-container">
+	
+			<header>
+				<a href="#" id="header_icon" class="header_icon"></a>
+				<nav>
+					<a href="/index.html">Accueil</a></li>
+					<a href="/aboutMe/aboutMe.html">Auteur</a></li>
+					<a href="/sciences/sciences.html">Sciences</a>
+					<a href="/sport/sport.html">Sport</a>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container">
+
+				<h1>Les instruments financiers de base</h1>
+
+				<p>Avant toute chose, nous allons définir les instruments financiers de base. Ceux-ci vont nous servir tout au
+				long de cette présentation.</p>
+				
+				<p>La présentation sera faite de façon concrête et se destine à être compréhensible par tout un chacun. 
+				Aucune difficulté insurmontable n'est de mise ici et le but est de se faire plaisir tout en apprenant!</p>
+				
+				<p>Nous allons ainsi voir ensemble ce que sont :
+				<ul>
+					<li>une action</li>
+					<li>un compte d'épargne</li>
+					<li>une option</li>
+				</ul>
+				</p>
+				
+				<p>Tout ceci vous parait bien abstrait ? Et bien, plus pour longtemps!</p>
+			
+				<h2>Action</h2>
+
+				<p>Le but d'une entreprise est de fournir quelquechose, un produit, un service, etc ... contre une rémunération. Mais pour pouvoir
+			   	produire quelquechose, il faut s'en donner les moyens, et pas seulement d'une façon abstraite. Ainsi, toute entreprise va chercher
+			  	à lever des fonds pour pouvoir se développer et prospérer.</p>
+			
+				<p>Dans le cas des plus grosses entreprises, il faut lever des fonds assez conséquent pour acheter du matériel coûteux, déployer 
+				des infrastructures souvent conséquentes et investir dans la recherche et l'innovation pour pouvoir sans cesse se renouveler 
+				et être compétitive sur le marché.</p>
+				
+				<p>C'est pourquoi ces grandes entreprises vont proposer à des banques et à des particuliers de participer au financement de 
+				leurs projets contre un intéressement sur leurs futurs résultats : elles vont mettre en vente des <strong>actions</strong> par
+				l'intermédiaire de la bourse. On dit alors qu'elles sont côtées en bourse.</p>
+				
+				<p>Que faut-il retenir ? Et bien c'est très simple : </p>
+				
+				<blockquote><strong>Action</strong> :<br/>
+				<p>Une action émise par une société est une part du capital de la société. Ainsi, lorsque la société en question réalise des bénéfices,
+				l'actionnaire, c'est-à-dire le détenteur de l'action, sera rétribué en retour à hauteur de sa participation au capital de celle-ci.</p></blockquote>
+				
+				<p>Notons que, logiquement, l'actionnaire majoritaire de l'entreprise n'est autre que le PDG.</p>
+				
+				<p>Mais attention! En achetant une action, on espère toujours que celle-ci va prendre de la valeur de façon à en tirer un 
+				maximum de bénéfices. Ceci peut être le cas si, par exemple, l'entreprise obtient de bon résultats. Mais ça, c'est assez
+				difficile à prévoir, surtout dans le cas de <em>start-up</em> ... C'est pourquoi il sera utile de proposer un modèle 
+				de représentation de la valeur de cette action au cours du temps. Dans cet exposé, deux modèles de valuation du cours de 
+				l'action seront présentés.</p>
+				
+				<p>En résumé, acheter une action c'est en quelque sorte prendre un pari, plus ou moins risqué, sur l'avenir ! Ainsi, 
+				placer tout son pécule dans des actions est assez risqué et nous allons voir tout de suite qu'il est bien plus prudent
+				de diversifier ses investissements de façon à s'octroyer un maximum de sécurité.</p>			 
+
+				<h2>Compte d'épargne</h2>
+
+				<p>A contrario des actions, il existe un moyen de gagner de l'argent en toute sécurité, sans trop jouer à la roulette avec son argent : le 
+				<strong>compte d'épargne</strong>.</p>
+				
+				<p>Il s'agit ici de placer tranquillement son argent dans un compte à la banque : c'est plus sûr que
+				sous le canapé et en plus ça rapporte. En effet, l'argent que vous placez à un certain taux à la banque vous rapporte des 
+				intérêts. Mais ne rêvez pas, c'est évidemment sans commune mesure avec l'argent gagné grâce aux actions, car tout de même 
+				beaucoup moins risqué! On a rien sans rien!</p>
+					 
+				<p>Mais quelle est l'intérêt de la banque de vous rémunérer alors que vous mettez en sécurité l'argent chez elle ? 
+				Après tout, c'est un service qu'elle vous rend. Et bien, tout simplement, parce que ça lui permet, à elle , de pouvoir
+				investir en bourse en achetant des actions mais, cette fois-ci, avec votre argent! Heureusement, celle-ci a tout le loisir
+				de diversifier ses investissements et possède de gentils monsieurs hautement qualifiés qui sont payés pour
+				faire ceci toute la journée: les <strong>traders</strong>. Du coup, sur cette affaire, comme vous vous en doutiez certainement,
+				celle-ci est rarement perdante ...</p>
+				
+				<p>Comment allons-nous représenter ceci quantitativement parlant ?</p>
+
+				<p>Et bien, supposons que nous déposions une somme \(C_{t}\) dans un compte en banque à la date \(t\). Cet argent "travaille" donc
+				pour nous et, compte tenu des intérêts \(r\) perçus, nous disposons à la date \(t + 1\) de la somme suivante dans notre compte en 
+				banque :
+				$$ C_{t + 1} = C_{t} + r \times C_{t} = C_{t}(1 + r) $$
+				</p>
+				
+				<p>Un peu plus tard, à l'instant \(t + 2\), nous possédons cette somme :
+				$$ C_{t + 2} = C_{t + 1} + r \times C_{t + 1} $$
+				</p>
+				
+				<p>Ce qui équivaut à :
+				$$ C_{t + 2} = C_{t}(1 + r) + r \times C_{t}(1 + r) = C_{t}(1 + r) \times (1 + r) = C_{t}(1 + r)^{2} $$
+				</p>
+				
+				<p>Et ainsi de suite, au bout de \(n\) périodes, nous possédons la somme suivante dans notre compte en banque (et ceci sans même
+				travailler, c'est pas beau ça!) : 
+				$$ \boxed{C_{t + n} = C_{t}(1 + r)^{n}} $$
+				</p>
+					
+				<h2>Option</h2>	
+
+				<p>Qu'est-ce donc qu'un <strong>option</strong> dans le jargon de la finance ? Et bien, selon <em>Roland Portait</em> et 
+				<em>Patrice Poncet</em>, les auteurs du livre <em>Finance de marché</em>, une référence dans le domaine :</p>
+											
+				<p><em>Une option est un actif pour lequel l'acheteur verse au vendeur une somme d'argent ("prime" de l'option) en date initiale et
+				reçoit en contrepartie, à une date future, un flux positif ou nul ("payoff" de l'option) dont le montant dépend de l'évolution
+				d'un actif dit sous-jacent.</em></p>
+										
+				<blockquote><strong>Option d'achat</strong> :<br/>
+				<p>En d'autres termes, une <strong>option d'achat</strong> (encore appelée <strong>call</strong>), par exemple, est un 
+				<strong>contrat</strong> qui donne à l'acheteur le droit (mais pas l'obligation!) d'acheter au vendeur une <strong>action</strong> A 
+				(l'<strong>actif sous-jacent</strong>), à une date T (l' <strong>échéance</strong>), au <strong>prix d'exercice</strong> K 
+				(le <strong>strike</strong>) fixé d'avance. Ce contrat a évidemment un prix : c'est ce que l'on appelle la <strong>prime</strong> de 
+				l'option.</p></blockquote>
+
+				<p>Il existe bien évidemment le cas symétrique de l'<strong>option de vente</strong> (ou <strong>put</strong>).</p>
+						
+				<p>Un bon exemple valant mieux qu'un long discours, supposons que je possède à l'heure où je vous parle une action A qui vaut 20 
+				euros. Une personne, certainement avertie, me propose de m'acheter  mon action dans 3 mois (l'échéance) au prix d'exercice (le strike)
+				de 18 euros.</p>
+				
+				<p>Cette personne a certainement senti que cette entreprise allait réaliser de jolies plus-values et souhaite en tirer des 
+				bénéfices. Mais, bien évidemment, il ne va pas me le dire! (Soit dit en passant, si son instinct se révêle être une certitude,
+				cette personne pourrait bien être condamnée pour délit dinitié, mais c'est un autre débat ...). Admettons que j'accepte son 
+				offre, quel prix vais-je lui faire payer pour qu'il ait le droit d'acheter mon action sous de telles conditions ?</p>
+
+				<p>Mettons que je fixe la valeur de l'option à 2 euros. Supposons maintenant que le prix de l'action monte et qu'elle atteigne,
+				au bout de 3 mois, la valeur de 23 euros (il avait vu juste !). L'acheteur exerce alors son droit d'acheter mon action.
+				Je reçois donc la somme de 18 + 2 = 20 euros tandis que lui possède une action d'une valeur de 23 euros, qu'il peut vendre sur le
+				marché pour empocher directement la somme. Concrêtement, il a acquit une action d'une valeur de 23 euros pour la somme de 20 euros.
+				Plutôt une bonne affaire! A contrario, moi, je lui ai vendu une action pour 20 euros alors que j'aurais pu la vendre sur le marché à 
+				23 euros. C'est beaucoup moins intéressant ...</p>
+				
+				<p>Imaginons également le cas où l'action s'effondre et passe en-dessous des 20 euros. Dans ce cas-là, l'acheteur n'exercera pas 
+				son droit d'acheter l'action (car sinon il perdrait de l'argent). Par contre, moi, j'aurais quand même perçu la <em>prime</em>
+				de l'option et j'empocherai ainsi 2 euros (lui aura perdu ses 2 euros "pour rien"). Dans ce scénario là, je me retrouve 
+				gagnant.</p>
+					
+				<p>Ainsi, le but est donc de fixer la valeur de la prime de l'option afin de maximiser les gains : on parle alors de pricing.</p>
+				
+				<p>A ce stade, on peut essayer de trouver une relation entre la valeur de la prime à l'instant T noté \(V_{T}\), le 
+				strike K et le prix de son actif sous-jacent \(S_{t}\).</p>
+					
+				<p>D'une part, à l'échéance, c'est-à-dire lorsque \(t = T \), si \(S_{t} \leqslant K \), alors il n'y a aucun intérêt à acheter
+				une action plus chère (via une option) qu'elle ne vaudrait sur le marché. Ainsi, l'option n'a aucune valeur : 
+				$$ V_{T} = 0 $$
+				</p>
+				
+				<p>D'autre part, à contrario, si \(S_{t} \geqslant  K \), alors il est vraiment intéressant d'acheter l'action par l'intermédiaire
+				d'une option, et donc sa valeur est celle du prix du sous-jacent correspondant diminuée du strike : 
+				$$ V_{T} = S_{T} - K $$
+				</p>
+					
+				<p>Ainsi, nous pouvons voir que la valeur \(V_{T} \) d'une option d'achat à son échéance T est une fonction du prix de son sous-jacent 
+				\(S_{T}\):
+				$$ \boxed{ V_{T , call} = Max\{ S_{T} - K ; 0 \} } $$
+				</p>
+				
+				<p>De même, la valeur d'une option de vente est :
+				$$ \boxed{ V_{T , put} = Max\{ K - S_{T} ; 0 \} } $$
+				
+				<p>Sachez tout de même qu'il existe plusieurs types d'options possédant chacune des propriétés particulières :
+						
+					<ul>
+						<li>
+							Les options <strong>européennes</strong> : elles ne peuvent être exercées qu'en fin de contrat, à une date fixée, 
+							que l'on appelle l'échéance
+						</li>
+						<li>
+							Les options <strong>américaines</strong> : elles peuvent être exercées à tout moment dans l'intervalle \([0;T]\) 
+							(T symbolisant l'échéance)
+						</li>
+						<li>
+							Les options dites <strong>exotiques</strong> : le <em>payoff</em> est dépendant de la trajectoire du prix du
+							sous-jacent dans l'intervalle \([0;T]\) et non de sa valeur en T (on dit qu'il est <em>path dependant</em>)
+						</li>	
+					</ul>
+					
+				</p>
+
+				<div class="hidden-site" id="hidden-site"></div>
+					
+			</div>
+
+			<footer>Copyright © 2014 - Arnaud BIEGUN. Tous droits réservés.</footer>
+
+		</div>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+	
+</body>
+
+</html>
